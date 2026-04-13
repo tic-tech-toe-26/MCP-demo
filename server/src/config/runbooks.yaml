@@ -1,0 +1,105 @@
+runbooks:
+  - id: runbook_incident
+    name: Incident Response Workflow
+    description: Triage, track, and resolve production incidents
+    requiredFields:
+      - project
+      - severity
+      - description
+      - assignee
+      - notificationChannel
+    suggestedSteps:
+      - Create a Jira issue for the incident
+      - Create a GitHub branch for the fix
+      - Send a Slack notification to the on-call team
+      - Log the incident in the tracking spreadsheet
+      - Monitor resolution and update status
+    connectors:
+      - jira
+      - github
+      - slack
+      - sheets
+
+  - id: runbook_release
+    name: Release Management Workflow
+    description: Coordinate and execute software releases
+    requiredFields:
+      - version
+      - targetBranch
+      - releaseNotes
+      - notificationChannel
+    suggestedSteps:
+      - Close the PR / merge to main
+      - Send a Slack deployment announcement
+      - Update the deployment log spreadsheet
+      - Update Jira tickets with release info
+    connectors:
+      - github
+      - slack
+      - sheets
+      - jira
+
+  - id: runbook_data
+    name: Data Pipeline Workflow
+    description: Create and manage data pipelines across services
+    requiredFields:
+      - sourceSheet
+      - targetSheet
+      - transformations
+    suggestedSteps:
+      - Read source data from spreadsheet
+      - Transform and validate data
+      - Write results to target spreadsheet
+      - Notify team of completion
+    connectors:
+      - sheets
+      - slack
+
+  - id: runbook_onboarding
+    name: Onboarding Workflow
+    description: Onboard new team members across platforms
+    requiredFields:
+      - employeeName
+      - team
+      - startDate
+    suggestedSteps:
+      - Create onboarding Jira ticket
+      - Create Slack welcome channel
+      - Add to team spreadsheet
+      - Send welcome message
+    connectors:
+      - jira
+      - slack
+      - sheets
+
+  - id: runbook_reporting
+    name: Reporting Workflow
+    description: Generate and distribute status reports
+    requiredFields:
+      - reportType
+      - period
+      - recipients
+    suggestedSteps:
+      - Gather data from spreadsheets
+      - Query Jira for ticket status
+      - Compile report
+      - Post summary to Slack
+    connectors:
+      - sheets
+      - jira
+      - slack
+
+  - id: runbook_custom
+    name: Custom Workflow
+    description: A custom workflow template for ad-hoc tasks
+    requiredFields: []
+    suggestedSteps:
+      - Analyze the request
+      - Determine required services
+      - Build execution plan
+      - Execute and verify
+    connectors:
+      - jira
+      - slack
+      - github
+      - sheets

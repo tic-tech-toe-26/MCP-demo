@@ -1,0 +1,43 @@
+connectors:
+  - connector: jira
+    allowedOperations:
+      - create_issue
+      - get_issue
+      - update_issue
+      - transition_issue
+      - delete_issue
+      - list_issues
+    deniedOperations: []
+    maxCallsPerMinute: 60
+
+  - connector: slack
+    allowedOperations:
+      - send_message
+      - create_channel
+      - list_channels
+      - get_channel_members
+      - delete_message
+    deniedOperations: []
+    maxCallsPerMinute: 30
+
+  - connector: github
+    allowedOperations:
+      - create_branch
+      - delete_branch
+      - create_pr
+      - merge_pr
+      - create_issue
+      - close_issue
+    deniedOperations: []
+    maxCallsPerMinute: 30
+
+  - connector: sheets
+    allowedOperations:
+      - append_row
+      - read_range
+      - update_cell
+      - create_sheet
+      - delete_row
+      - get_formula
+    deniedOperations: []
+    maxCallsPerMinute: 60

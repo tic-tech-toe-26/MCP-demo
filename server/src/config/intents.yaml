@@ -1,0 +1,87 @@
+categories:
+  - id: incident_response
+    name: Incident Response
+    keywords:
+      - bug
+      - incident
+      - outage
+      - crash
+      - error
+      - failure
+      - broken
+      - down
+      - alert
+      - P0
+      - P1
+      - critical
+      - triage
+    runbookId: runbook_incident
+    defaultRisk: high
+
+  - id: release_management
+    name: Release Management
+    keywords:
+      - deploy
+      - release
+      - ship
+      - launch
+      - version
+      - merge
+      - PR
+      - pull request
+      - rollout
+      - staging
+      - production
+    runbookId: runbook_release
+    defaultRisk: medium
+
+  - id: data_pipeline
+    name: Data Pipeline
+    keywords:
+      - data
+      - pipeline
+      - ETL
+      - migrate
+      - sync
+      - export
+      - import
+      - spreadsheet
+      - report
+      - aggregate
+    runbookId: runbook_data
+    defaultRisk: low
+
+  - id: onboarding
+    name: Onboarding
+    keywords:
+      - onboard
+      - new hire
+      - setup
+      - access
+      - provision
+      - account
+      - welcome
+      - invite
+    runbookId: runbook_onboarding
+    defaultRisk: low
+
+  - id: reporting
+    name: Reporting
+    keywords:
+      - report
+      - status
+      - summary
+      - dashboard
+      - metrics
+      - analytics
+      - weekly
+      - daily
+      - standup
+    runbookId: runbook_reporting
+    defaultRisk: low
+
+  - id: custom
+    name: Custom Workflow
+    keywords: []
+    runbookId: runbook_custom
+    defaultRisk: medium

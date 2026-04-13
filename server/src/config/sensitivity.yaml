@@ -1,0 +1,77 @@
+rules:
+  - operation: send_message
+    connector: slack
+    sensitivity: high
+    reason: Sends external communications to team channels
+    requiresApproval: true
+
+  - operation: merge_pr
+    connector: github
+    sensitivity: high
+    reason: Pushes code changes to main branch
+    requiresApproval: true
+
+  - operation: delete_issue
+    connector: jira
+    sensitivity: high
+    reason: Permanently deletes a tracked issue
+    requiresApproval: true
+
+  - operation: delete_branch
+    connector: github
+    sensitivity: medium
+    reason: Removes a Git branch
+    requiresApproval: false
+
+  - operation: delete_message
+    connector: slack
+    sensitivity: medium
+    reason: Removes a sent message
+    requiresApproval: false
+
+  - operation: delete_row
+    connector: sheets
+    sensitivity: high
+    reason: Permanently deletes data from a spreadsheet
+    requiresApproval: true
+
+  - operation: update_cell
+    connector: sheets
+    sensitivity: medium
+    reason: Modifies existing spreadsheet data
+    requiresApproval: false
+
+  - operation: transition_issue
+    connector: jira
+    sensitivity: medium
+    reason: Changes the status workflow of an issue
+    requiresApproval: false
+
+  - operation: create_issue
+    connector: jira
+    sensitivity: low
+    reason: Creates a new trackable issue
+    requiresApproval: false
+
+  - operation: create_branch
+    connector: github
+    sensitivity: low
+    reason: Creates a new feature branch
+    requiresApproval: false
+
+  - operation: create_pr
+    connector: github
+    sensitivity: low
+    reason: Opens a pull request for review
+    requiresApproval: false
+
+  - operation: append_row
+    connector: sheets
+    sensitivity: low
+    reason: Adds new data to a spreadsheet
+    requiresApproval: false
+
+# Global settings
+thresholds:
+  confidenceGateThreshold: 70
+  autoApproveAbove: 95
